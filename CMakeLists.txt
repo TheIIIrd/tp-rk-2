@@ -12,6 +12,6 @@ if(BUILD_TESTS)
   enable_testing()  # Включаем поддержку тестирования.
   file(GLOB ${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)  # Получаем исходные файлы тестов.
   add_executable(prototests ${${PROJECT_NAME}_TEST_SOURCES})  # Создаем исполняемый файл для тестов.
-  target_link_libraries(prototests ${PROJECT_NAME} gtest_main)  # Линкуем библиотеки для тестов.
+  target_link_libraries(prototests gtest_main)  # Линкуем библиотеки для тестов.
   add_test(NAME prototests COMMAND prototests)  # Добавляем команду для запуска тестов.
 endif()
