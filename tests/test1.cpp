@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "Prototype.cpp" 
+#include "prototype/Prototype.cpp" 
 
 TEST(PrototypeTest, CloneTest) { 
 	ConcretePrototypeA prototypeA; 
