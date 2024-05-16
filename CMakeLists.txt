@@ -18,4 +18,4 @@ enable_testing()
 add_executable(test tests/test.cpp)
 target_link_libraries(test gtest gtest_main)
 
-add_test(NAME test COMMAND test1)
+add_test(NAME test COMMAND test)
