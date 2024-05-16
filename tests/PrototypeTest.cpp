@@ -1,21 +1,28 @@
+#include <iostream>
 #include "gtest/gtest.h"
 #include "../prototype/Prototype.cpp" 
 
 TEST(PrototypeTest1, CloneTest) { 
-	ConcretePrototypeA prototypeA; 
-	ConcretePrototypeB prototypeB; 
+    std::cout << "[*] TEST 1" << std::endl;
+	
+    ConcretePrototypeA prototypeA; 
+    ConcretePrototypeB prototypeB; 
 
-	Prototype* clonedA = prototypeA.clone(); 
-	Prototype* clonedB = prototypeB.clone(); 
+    Prototype* clonedA = prototypeA.clone(); 
+    Prototype* clonedB = prototypeB.clone(); 
 
-	EXPECT_EQ(clonedA->type(), "type A"); 
-	EXPECT_EQ(clonedB->type(), "type B"); 
+    EXPECT_EQ(clonedA->type(), "type A"); 
+    EXPECT_EQ(clonedB->type(), "type B"); 
 
-	delete clonedA; 
-	delete clonedB; 
+    delete clonedA; 
+    delete clonedB; 
+
+    std::cout << "[*] TEST 1: OK" << std::endl;
 }
 
 TEST(PrototypeTest2, DifferentObjectsTest) {
+    std::cout << "[*] TEST 2" << std::endl;
+
     ConcretePrototypeA prototypeA;
     ConcretePrototypeB prototypeB;
 
@@ -33,9 +40,13 @@ TEST(PrototypeTest2, DifferentObjectsTest) {
     delete clonedA2;
     delete clonedB1;
     delete clonedB2;
+
+    std::cout << "[*] TEST 2: OK" << std::endl;
 }
 
 TEST(PrototypeTest3, TypeChangeAfterClone) {
+    std::cout << "[*] TEST 3" << std::endl;
+
     // Создаем исходный объект типа ConcretePrototypeA
     ConcretePrototypeA prototypeA;
 
@@ -53,4 +64,6 @@ TEST(PrototypeTest3, TypeChangeAfterClone) {
 
     // Удаляем клон
     delete clonedA;
+
+    std::cout << "[*] TEST 3: OK" << std::endl;
 }
