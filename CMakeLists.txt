@@ -15,7 +15,7 @@ include_directories(third-party/gtest/googletest/include)
 enable_testing()
 
 # Добавление исполняемого файла для теста
-add_executable(test tests/test.cpp)
-target_link_libraries(test gtest gtest_main)
+add_executable(prototest tests/PrototypeTest.cpp)
+target_link_libraries(prototest gtest gtest_main)
 
-add_test(NAME test COMMAND test)
+add_test(NAME prototest COMMAND prototest)
