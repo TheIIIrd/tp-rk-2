@@ -27,15 +27,15 @@ jobs:
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake -H ${{github.workspace}} -B ${{github.workspace}}/build -DBUILD_TESTS=ON
+      run: cmake -H . -B ./build -DBUILD_TESTS=ON
 
     - name: Test
       run: |
-       cmake --build ${{github.workspace}}/build --target prototest
-       ${{github.workspace}}/build/prototest
+       cmake --build .build --target prototest
+       ./build/prototest
 
     - name: Artifacts
       uses: actions/upload-artifact@v4
       with:
           name: linux_artifacts
-          path: ${{github.workspace}}/build/PrototypePattern
+          path: ./build/PrototypePattern
