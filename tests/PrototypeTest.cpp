@@ -17,7 +17,7 @@ TEST(PrototypeTest1, CloneTest) {
     delete clonedA; 
     delete clonedB; 
 
-    std::cout << "[*] TEST 1: OK" << std::endl;
+    std::cout << "[+] TEST 1: OK" << std::endl;
 }
 
 TEST(PrototypeTest2, DifferentObjectsTest) {
@@ -41,7 +41,7 @@ TEST(PrototypeTest2, DifferentObjectsTest) {
     delete clonedB1;
     delete clonedB2;
 
-    std::cout << "[*] TEST 2: OK" << std::endl;
+    std::cout << "[+] TEST 2: OK" << std::endl;
 }
 
 TEST(PrototypeTest3, TypeChangeAfterClone) {
@@ -65,5 +65,5 @@ TEST(PrototypeTest3, TypeChangeAfterClone) {
     // Удаляем клон
     delete clonedA;
 
-    std::cout << "[*] TEST 3: OK" << std::endl;
+    std::cout << "[+] TEST 3: OK" << std::endl;
 }
