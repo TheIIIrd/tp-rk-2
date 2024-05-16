@@ -27,12 +27,12 @@ jobs:
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake -H. -B./build -DBUILD_TESTS=ON
+      run: cmake -H. -B_build -DBUILD_TESTS=ON
 
     - name: Test
       run: |
-       cmake --build .build --target prototest
-       ./build/prototest
+       cmake --build _build --target prototest
+       _build/prototest
 
     - name: Artifacts
       uses: actions/upload-artifact@v4
