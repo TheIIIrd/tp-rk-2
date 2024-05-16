@@ -31,7 +31,7 @@ jobs:
 
     - name: Test
       run: |
-       cmake --build _build --target prototest
+       cmake --build _build --target prototests
        _build/prototests
 
     - name: Artifacts
