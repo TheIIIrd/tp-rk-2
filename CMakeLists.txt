@@ -13,5 +13,5 @@ set(SOURCE_FILES prototype/Prototype.cpp)
 add_executable(PrototypePattern ${SOURCE_FILES})
 
 # Добавление исполняемого файла для теста
-add_executable(test1 test1.cpp)
+add_executable(test1 tests/test1.cpp)
 target_link_libraries(test1 gtest gtest_main)
