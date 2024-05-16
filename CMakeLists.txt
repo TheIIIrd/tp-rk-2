@@ -3,9 +3,9 @@ set(CMAKE_CXX_STANDARD 17)  # Устанавливаем стандарт C++ 17
 
 project(PrototypePattern)  # Задаем название проекта.
 
-option(BUILD_TESTS "Build tests" ON)  # Опция для сборки тестов. По умолчанию включена.
+option(BUILD_TESTS "Build tests" OFF)  # Опция для сборки тестов. По умолчанию включена.
 
-set(SOURCE_FILES prototype/Prototype.cpp)  # Указываем исходные файлы для основного исполняемого файла.
+set(SOURCE_FILES prototype/*pp)  # Указываем исходные файлы для основного исполняемого файла.
 add_executable(PrototypePattern ${SOURCE_FILES})  # Создаем исполняемый файл.
 
 if(BUILD_TESTS)
