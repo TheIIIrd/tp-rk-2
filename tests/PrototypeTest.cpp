@@ -66,3 +66,11 @@ TEST(PrototypeTest3, TypeChangeAfterClone) {
 
     std::cout << "[+] TEST 3: OK" << std::endl;
 }
+
+TEST(testus, testus) {
+    EXPECT_EQ(1, 1);
+}
+
+TEST(testsus, testsus) {
+    EXPECT_EQ(1, 0);
+}
