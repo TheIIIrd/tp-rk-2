@@ -36,7 +36,7 @@ jobs:
     - name: Test
       run: |
        cmake --build ${{github.workspace}}/build --target prototest ARGS=--verbose
-       ${{github.workspace}}/build/PrototypeTest
+       ${{github.workspace}}/build/prototest
 
     - name: Artifacts
       uses: actions/upload-artifact@v4
