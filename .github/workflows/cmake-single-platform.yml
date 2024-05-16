@@ -37,3 +37,9 @@ jobs:
       run: |
        cmake --build ${{github.workspace}}/build --target test1 ARGS=--verbose
        ${{github.workspace}}/build/test1
+
+    - name: Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+          name: linux_artifacts
+          path: ${{github.workspace}}/build/PrototypePattern
