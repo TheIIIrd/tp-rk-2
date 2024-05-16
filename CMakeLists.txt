@@ -5,8 +5,10 @@ project(PrototypePattern)  # Задаем название проекта.
 
 option(BUILD_TESTS "Build tests" OFF)  # Опция для сборки тестов. По умолчанию включена.
 
-set(SOURCE_FILES prototype/*pp)  # Указываем исходные файлы для основного исполняемого файла.
-add_executable(PrototypePattern ${SOURCE_FILES})  # Создаем исполняемый файл.
+add_executable(PrototypePattern prototype/Prototype.cpp
+                                prototype/Prototype.hpp
+                                prototype/Client.cpp
+                                prototype/Client.hpp)  # Создаем исполняемый файл.
 
 if(BUILD_TESTS)
   enable_testing()  # Включаем поддержку тестирования.
