@@ -47,4 +47,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
           name: linux_artifacts
-          path: ${{github.workspace}}/build/PrototypePattern
+          path: ${{github.workspace}}/build/prototests
+          # path: ${{github.workspace}}/build/PrototypePattern
