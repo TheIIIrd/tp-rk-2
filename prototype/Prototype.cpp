@@ -1,26 +1,22 @@
-#include "prototype.hpp"
-#include <iostream>
+#include "Prototype.hpp"
 
-Prototype* Client::types[2];
-int Client::n_types = 2;
-
-void Client::init()
+Prototype* ConcretePrototypeA::clone()
 {
-  types[0] = new ConcretePrototypeA();
-  types[1] = new ConcretePrototypeB();
+  return new ConcretePrototypeA();
 }
 
-void Client::remove()
+std::string ConcretePrototypeA::type()
 {
-  delete types[0];
-  delete types[1];
+  return "type A";
 }
 
-Prototype* Client::make(const int index)
+Prototype* ConcretePrototypeB::clone()
 {
-  if (index >= n_types)
-  {
-    return nullptr;
-  }
-  return types[index]->clone();
+  return new ConcretePrototypeB();
 }
+
+std::string ConcretePrototypeB::type()
+{
+  return "type B";
+}
+
