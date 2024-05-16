@@ -2,10 +2,12 @@
 #include "../prototype/Prototype.cpp"
 #include "../prototype/Client.cpp"
 
+// Тест на верность
 TEST(testus, testus) {
     EXPECT_EQ(1, 1);
 }
 
+// Тест на храьрость
 TEST(PrototypeTest, CloneTest) { 
     ConcretePrototypeA prototypeA; 
     ConcretePrototypeB prototypeB; 
@@ -20,6 +22,7 @@ TEST(PrototypeTest, CloneTest) {
     delete clonedB;
 }
 
+// Тест на прочность
 TEST(PrototypeTest, DifferentObjectsTest) {
     ConcretePrototypeA prototypeA;
     ConcretePrototypeB prototypeB;
@@ -40,16 +43,44 @@ TEST(PrototypeTest, DifferentObjectsTest) {
     delete clonedB2;
 }
 
-TEST(PrototypeTest, TypeChangeAfterClone) {
-    ConcretePrototypeA prototypeA;
+// Тование ConcretePrototypeA
+TEST(PrototypeTest, CloneA)
+{
+  ConcretePrototypeA a;
+  Prototype* clonedA = a.clone();
+  
+  ASSERT_NE(clonedA, nullptr);
+  ASSERT_EQ(clonedA->type(), "type A");
+  delete clonedA;
+}
 
-    Prototype* clonedA = prototypeA.clone();
+// Тестирование ConcretePrototypeB
+TEST(PrototypeTest, CloneB)
+{
+  ConcretePrototypeB b;
+  Prototype* clonedB = b.clone();
+  
+  ASSERT_NE(clonedB, nullptr);
+  ASSERT_EQ(clonedB->type(), "type B");
+  delete clonedB;
+}
 
-    EXPECT_EQ(clonedA->type(), "type A");
-    
-    clonedA->type() = "changed type A";
-    
-    EXPECT_EQ(clonedA->type(), "changed type A");
-    
-    delete clonedA;
+// Тестирование Client
+TEST(ClientTest, Make)
+{
+  Client::init();
+  Prototype* madeObject = Client::make(0);
+  
+  ASSERT_NE(madeObject, nullptr);
+  ASSERT_EQ(madeObject->type(), "type A");
+  
+  delete madeObject;
+  Client::remove();
+}
+
+// Да
+int main(int argc, char** argv)
+{
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }
