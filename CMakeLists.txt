@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 project(PrototypePattern)
 
 # Add all your source files here set
-(SOURCE_FILES prototype/Prototype.cpp )
+set(SOURCE_FILES prototype/Prototype.cpp)
 
 add_executable(PrototypePattern ${SOURCE_FILES})
-
