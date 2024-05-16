@@ -7,7 +7,7 @@ TEST(testus, testus) {
     EXPECT_EQ(1, 1);
 }
 
-// Тест на храьрость
+// Тест на храбрость
 TEST(PrototypeTest, CloneTest) { 
     ConcretePrototypeA prototypeA; 
     ConcretePrototypeB prototypeB; 
