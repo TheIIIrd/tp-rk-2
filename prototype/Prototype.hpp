@@ -17,14 +17,8 @@ class ConcretePrototypeA : public Prototype
 public:
   ~ConcretePrototypeA() {}
   
-  Prototype* clone() override
-  {
-    return new ConcretePrototypeA();
-  }
-  std::string type() override
-  {
-    return "type A";
-  }
+  Prototype* clone();
+  std::string type();
 };
 
 class ConcretePrototypeB : public Prototype
@@ -32,26 +26,8 @@ class ConcretePrototypeB : public Prototype
 public:
   ~ConcretePrototypeB() {}
   
-  Prototype* clone() override
-  {
-    return new ConcretePrototypeB();
-  }
-  std::string type() override
-  {
-    return "type B";
-  }
+  Prototype* clone();
+  std::string type();
 };
 
-class Client
-{
-public:
-  static void init();
-  static void remove();
-  static Prototype* make(const int index);
-
-private:
-  static Prototype* types[2];
-  static int n_types;
-};
-
-#endif // PROTOTYPE_HPP
+#endif
