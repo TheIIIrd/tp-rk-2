@@ -39,8 +39,14 @@ jobs:
     - name: Run tests
       run: ${{github.workspace}}/build/ProtoTests
 
-    - name: Artifacts
+    - name: Artifact ProtoTests
       uses: actions/upload-artifact@v4
       with:
-          name: linux_artifacts
-          path: ${{github.workspace}}/build/ProtoTests ${{github.workspace}}/build/PrototypePatternDemo
+          name: linux_artifact_prototests
+          path: ${{github.workspace}}/build/ProtoTests
+
+    - name: Artifact PrototypePatternDemo
+      uses: actions/upload-artifact@v4
+      with:
+          name: linux_artifact_prototypepatterndemo
+          path: ${{github.workspace}}/build/PrototypePatternDemo
