@@ -1,2 +1,2 @@
-# tp-lab-rk2
+# tp-rk2
 TIMP RK2
