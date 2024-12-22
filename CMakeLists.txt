@@ -6,20 +6,20 @@ project(PrototypePattern)  # Задаем название проекта.
 option(BUILD_TESTS "Build tests" OFF)  # Опция для сборки тестов. По умолчанию выключена.
 option(BUILD_DEMO "Build demo" ON)     # Опция для сборки демо. По умолчанию включена.
 
-add_executable(PrototypePattern prototype/Prototype.cpp
-                                prototype/Prototype.hpp
-                                prototype/Client.cpp
-                                prototype/Client.hpp)  # Создаем исполняемый файл.
+add_executable(PrototypePattern src/prototype/Prototype.cpp
+                                src/prototype/Prototype.hpp
+                                src/prototype/Client.cpp
+                                src/prototype/Client.hpp)  # Создаем исполняемый файл.
 
 if(BUILD_TESTS)
   enable_testing()  # Включаем поддержку тестирования.
-  file(GLOB ${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)  # Получаем исходные файлы тестов.
-  add_subdirectory(third-party/gtest) # Добавляем библиотеку Google Test
+  file(GLOB ${PROJECT_NAME}_TEST_SOURCES src/tests/*.cpp)  # Получаем исходные файлы тестов.
+  add_subdirectory(src/third-party/gtest) # Добавляем библиотеку Google Test
   add_executable(ProtoTests ${${PROJECT_NAME}_TEST_SOURCES})  # Создаем исполняемый файл для тестов.
   target_link_libraries(ProtoTests gtest_main)  # Линкуем библиотеки для тестов.
   add_test(NAME ProtoTests COMMAND ProtoTests)  # Добавляем команду для запуска тестов.
 endif()
 
 if(BUILD_DEMO)
-  add_executable(PrototypePatternDemo demo/main.cpp) # Получаем исходные демо тестов.
+  add_executable(PrototypePatternDemo src/demo/main.cpp) # Получаем исходные демо тестов.
 endif()
